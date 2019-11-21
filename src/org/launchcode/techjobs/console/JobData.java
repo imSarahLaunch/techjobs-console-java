@@ -61,7 +61,8 @@ public class JobData {
             for(String rowItem : row.values()) {
                 String item = rowItem.toLowerCase();
                 boolean match = Arrays.asList(item.split(" ")).contains(value.toLowerCase());
-                if(match) {
+                boolean matches = item.contains(value.toLowerCase());
+                if(match || matches) {
                     values.add(row);
                     if(values.contains(row)) {
                         break;
